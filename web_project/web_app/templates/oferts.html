@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas</title>
+</head>
+{% extends "base.html" %}
+{% load static %}
+<body>
+    {% block content %}
+    {% for ofert in oferts %}
+
+        <section class="page-section clearfix">
+            <div class="container">
+              <div class="intro">
+                <div class="ofert text-center bg-faded p-4 rounded">
+                    <h2 class="section-heading mb-4" >
+                        <span class="section-heading-lower">{{ofert.nombre}}</span>
+                        <span class="section-heading-upper">{{ofert.descripcion}}</span>
+                        <span class="section-heading-upper">Fecha de creación: {{ofert.fecha_inicio}}</span>
+                        <a href="{% url 'empleability' %}">Aplicar</a>
+                        <a href="{% url 'update1' ofert.id %}" class="ed">Editar</a>
+                        <a href="{% url 'delete1' ofert.id %}" class="ed">Eliminar</a>
+                    </h2>
+                </div>
+                </div>
+              </div>
+        </section>
+
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

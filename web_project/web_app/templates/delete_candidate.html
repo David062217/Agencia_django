@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar</title>
+</head>
+{% extends "base.html" %}
+{% load static %}
+<body>
+    {% block content %}
+    <div class="post-form">
+        <h3 class="title-post">¿ Seguro de eliminar {{ aspirante.nombre }}?</h3>
+        <form method="POST" class="form1">
+            {% csrf_token %}
+            <table class="table1">
+            </table>
+            <button type="submit" class="save btn btn-default btn">Eliminar</button>
+            <button type="button" class="save btn btn-default btn"><a href="{% url 'home' %}" class="cancel">Cancelar</a></button>
+        </form>
+    </div>
+    </form>
+    {% endblock %}
+</body>
+</html>

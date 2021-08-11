@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+	</head>
+	{% extends "base.html" %} 
+  {% load static %}
+	<body>
+		{% block content %}
+		<!-- Heading -->
+  <section class="page-section clearfix">
+   <div class="container">
+     <div class="intro">
+       <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static '/img/empresa.jpg' %}" alt="">
+       <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+         <h2 class="section-heading mb-4" >
+           <span class="section-heading-upper">Las mejores ofertas</span>
+           <span class="section-heading-lower">Empleos.com.co</span>
+         </h2>
+         <p class="mb-3">Tú proximo tabajo lo puedes encontrar aquí.
+         </p>
+        
+       </div>
+     </div>
+   </div>
+ </section>
+
+		<!-- Message -->
+		<section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Tú eliges</span>
+              </h2>
+              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, en Empleos.com.co tenemos los conocimientos y herramientas necesarios para ayudarte a encontrar el empleo de tus sueños.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		{% endblock %}
+	</body>
+</html>

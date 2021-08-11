@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirantes</title>
+</head>
+{% extends "base.html" %}
+{% load static %}
+<body>
+    {% block content %}
+
+    {% for aspirante in aspirantes %}
+
+    <section class="page-section clearfix">
+    <div class="container">
+        <div class="intro-c">
+            <div class="candidate text-center bg-faded p-4 rounded">
+                <h2 class="section-heading mb-4" >
+                    <span class="section-heading-lower">{{aspirante.nombre}}</span>
+                    <span class="section-heading-upper">Edad: {{aspirante.edad}}</span>
+                    {% if aspirante.genero == "m" %}
+                    <span class="section-heading-upper">Genero: Masculino</span>
+                    {% else %}
+                    <span class="section-heading-upper">Genero: Femenino</span>
+                    {% endif %}
+                    <span class="section-heading-upper">Profesión: {{aspirante.id_profesion}}</span>
+                    <a href="{% url 'delete' aspirante.id %}">Eliminar</a>
+                    <a href="{% url 'update' aspirante.id %}">Editar</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+    </section>
+    {% endfor %}
+    
+    {% endblock %}
+    <!-- {{aspirante.genero}} -->
+</body>
+</html>
